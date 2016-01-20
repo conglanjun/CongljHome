@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+		<!-- 配置自动提交事务 -->
+	   <property name="hibernate.connection.autocommit">true</property>
+	   <property name="hibernate.connection.url" >jdbc:mysql://localhost:3306/cljHome</property>
+	   <property name="hibernate.connection.driver_class" >com.mysql.jdbc.Driver</property>
+	   <property name="hibernate.connection.username" >root</property>
+	   <property name="hibernate.connection.password" >root</property>
+
+        <!-- 显示实际操作数据库时的SQL -->
+
+        <property name="show_sql">true</property>
+
+        <!-- SQL方言，这边设定的是MySQL -->
+
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- 对象与数据库表格映像文件 -->
+
+       <mapping class="com.conglanjun.bean.Introduce" />
+       <mapping class="com.conglanjun.bean.Message" />
+
+    </session-factory>
+
+</hibernate-configuration>
