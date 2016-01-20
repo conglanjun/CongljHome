@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../css/jquery/jquery-ui.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/bootsrap/bootstrap.min.css">
+<script src="../../js/jquery/jquery-1.12.0.min.js"></script>
+<script src="../../js/jquery/jquery-ui.min.js"></script>
+<script src="../../js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="tabs" class="tabs_div">
+		<ul>
+			<li><a href="#tabs-1">休闲游戏</a></li>
+			<li><a href="#tabs-2">人物RPG</a></li>
+			<li><a href="#tabs-3">游戏意见</a></li>
+		</ul>
+		<div id="tabs-1">
+			<div id="tab_div">
+				<a href="#">1.堵箱子游戏</a><br/>
+				<a href="#">2.水果忍者</a><br/>
+			</div>
+			<div class="returnButtonDiv">
+				<button type="button" class="btn btn-default" aria-label="Left Align">返回</button>
+			</div>
+			<iframe class="gameFrame" src=""></iframe>
+		</div>
+		<div id="tabs-2">
+			<p>等我做个RPG游戏给大家娱乐一下。目前此板块还没未开设，请大家耐心等待。。。</p>
+		</div>
+		<div id="tabs-3">
+			<p>可以留言给我一些建议。希望能玩什么样的游戏。</p>
+		</div>
+	</div>
+</body>
+<!-- <script src="../../js/angularjs/angular.1.3.0.min.js"></script> -->
+<script>
+$(function(){
+	$('#tabs').tabs();
+	$('#tabs-1 a').unbind('click');
+	$('#tabs-1 a').eq(0).bind('click',function(){
+		$('#tab_div').slideUp('slow');
+		$('.returnButtonDiv').slideDown('slow');
+		$('.gameFrame').attr('src','../../html/game/boxGame/boxGame.html').slideDown('slow');
+	});
+	$('#tabs-1 a').eq(1).bind('click',function(){
+		$('#tab_div').slideUp('slow');
+		$('.returnButtonDiv').slideDown('slow');
+		$('.gameFrame').attr('src','/CongljHome/html/game/fruit-ninja/index.html').slideDown('slow');
+	});
+	$('.returnButtonDiv').unbind('click');
+	$('.returnButtonDiv').bind('click',function(){
+		$('#tab_div').slideDown('slow');
+		$(this).slideUp('slow');
+		$('.gameFrame').attr('src','').slideUp('slow');
+	});
+});
+</script>
+</html>
